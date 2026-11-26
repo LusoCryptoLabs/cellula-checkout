@@ -1,0 +1,9 @@
+node_modules
+dist
+dist-e2e
+dist-payer
+dist-room
+e2e-runs
+shop-data
+*.log
+apps/agent/npm/

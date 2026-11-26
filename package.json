@@ -1,0 +1,19 @@
+{
+  "name": "pay-with-fiber-workspace",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/merchant",
+    "apps/shop",
+    "apps/agent",
+    "apps/agent-relay"
+  ],
+  "scripts": {
+    "test": "npm test -w pay-with-fiber && npm test -w pay-with-fiber-shop && npm test -w pay-with-fiber-agent && npm test -w pay-with-fiber-agent-relay",
+    "typecheck": "npm run typecheck -w pay-with-fiber && npm run typecheck -w pay-with-fiber-shop && npm run typecheck -w pay-with-fiber-agent && npm run typecheck -w pay-with-fiber-agent-relay",
+    "build": "npm run build -w pay-with-fiber && npm run build -w pay-with-fiber-shop && npm run build -w pay-with-fiber-agent && npm run build -w pay-with-fiber-agent-relay"
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.5"
+  }
+}

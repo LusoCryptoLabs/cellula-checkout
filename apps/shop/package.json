@@ -1,0 +1,13 @@
+{
+  "name": "pay-with-fiber-shop",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "A demo shop paid over Fiber on testnet: the merchant kit on the server, Pay with Fiber in the page",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\"",
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit"
+  }
+}

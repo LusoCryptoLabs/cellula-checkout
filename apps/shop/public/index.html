@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Fiber Demo Shop</title>
+<meta name="description" content="A demo shop that takes payments over Fiber on CKB testnet: the merchant kit on the server, Cellula Checkout in the page.">
+<link rel="stylesheet" href="shop.css">
+<script src="__PAY_SCRIPT__" defer></script>
+<script src="shop.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>Fiber Demo Shop</h1>
+      <p class="lede">Paid over Fiber on CKB testnet, in seconds. Test CKB has no value: nothing here costs real money.</p>
+    </div>
+    <p class="state" id="state" role="status">Checking the shop…</p>
+  </header>
+
+  <p class="notice" id="returned" hidden></p>
+
+  <section class="products" id="products" aria-label="Products"></section>
+
+  <section class="how">
+    <h2>How to pay</h2>
+    <ol>
+      <li>Have a Cellula wallet at <a href="https://wallet.testnet.cellula.id" target="_blank" rel="noopener">wallet.testnet.cellula.id</a>. Its Fiber balance pays; the first payment can top it up.</li>
+      <li>Pick something here and press Pay with Fiber. Your Cellula wallet opens in a small window; confirm there. No other tab is needed.</li>
+      <li>The shop's own server confirms the payment. This page never takes the window's word for it.</li>
+    </ol>
+  </section>
+
+  <section class="dev">
+    <h2>How this shop takes Fiber</h2>
+    <p>The shop's server makes each invoice from its own channel with the merchant kit, and learns it was paid from a signed webhook, the way Stripe sends them.</p>
+<pre><code>// server: an invoice for the order
+const inv = await merchant.createInvoice({ amount_ckb: '2', order_id: order.id })
+
+// page: the button opens the person's checkout
+&lt;script src="https://testnet.cellula.id/pay-with-fiber.js"&gt;&lt;/script&gt;
+&lt;button data-fiber-invoice="${inv.invoice}"&gt;Pay with Fiber&lt;/button&gt;
+
+// server: believe a payment only from a signed webhook
+if (verifyWebhook(rawBody, req.headers['fiber-signature'], secret)) markPaid(...)</code></pre>
+  </section>
+
+  <footer class="foot">A LusoCryptoLabs demo on CKB testnet. Payments travel encrypted from node to node; this shop sees only what reaches its own channel.</footer>
+</div>
+</body>
+</html>

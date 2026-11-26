@@ -1,0 +1,28 @@
+{
+  "name": "pay-with-fiber",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Take Fiber payments on a server: invoices for orders, a promise when paid, signed webhooks, a small HTTP API",
+  "license": "MIT",
+  "exports": {
+    ".": "./src/index.ts",
+    "./webhook": "./src/webhook.ts"
+  },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\"",
+    "typecheck": "tsc --noEmit",
+    "build": "node scripts/build.mjs"
+  },
+  "peerDependencies": {
+    "@ckb-ccc/core": ">=1.19.1 <2"
+  },
+  "devDependencies": {
+    "@ckb-ccc/core": "1.23.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "cellula-sdk": "0.3.12"
+  }
+}

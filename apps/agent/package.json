@@ -1,0 +1,16 @@
+{
+  "name": "pay-with-fiber-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "An agent's own Fiber balance on testnet: pays invoices and sellers' HTTP 402 answers within caps the person sets, over a local HTTP API",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\"",
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@ckb-ccc/core": "1.23.0"
+  }
+}
