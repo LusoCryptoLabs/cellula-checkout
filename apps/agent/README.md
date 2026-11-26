@@ -12,8 +12,8 @@ node dist/agent.mjs key
 
 `key` makes the agent's testnet key and the API key in `~/.cellula-agent` (never over one already
 there) and prints the address. Fund it: the first channel needs what it opens with, the 100 CKB
-reserve, the LSP's 500 CKB opening fee once per wallet, and 61 for the change, plus the fee. 700 CKB
-covers a 20 CKB channel; 680 was just short (2026-11-01).
+reserve, the LSP's opening fee if it asks one, and 61 for the change, plus the fee. The fee is set by
+each LSP; the testnet LSP asks none today. 700 CKB covers a 20 CKB channel with room to spare.
 
 ```sh
 node dist/agent.mjs --return-to ckt1... --open 20 --per-payment 1 --total 10

@@ -19,9 +19,9 @@ cmd, bash or zsh.
    ```
 
 2. Fund that address with testnet CKB from the [faucet](https://faucet.nervos.org). 700 CKB
-   covers its first channel of 20 CKB, with the LSP's opening fee of 500 CKB (it opens no channel
-   if the LSP asks more), paid once per
-   wallet, and the change it needs (680 is just short).
+   covers its first channel of 20 CKB, with the LSP's opening fee if it asks one (it opens no channel if the
+   LSP asks more than it can pay), and the change it needs. The fee is set by each LSP; the testnet
+   LSP asks none today.
 
 3. Start it, with your own testnet address and your limits, and leave it running:
 

@@ -204,7 +204,7 @@ export class Merchant {
     return !!c?.ready && !c.closed && this.feeDue()
   }
 
-  /** The LSP's opening fee (500 CKB on testnet, once per wallet), paid from the channel as soon as it is
+  /** The LSP's opening fee (set by the LSP, none on testnet today), paid from the channel as soon as it is
    * ready, as the wallet's session pays it: until it is paid the LSP takes no payment into the
    * channel. Paid once at a time; one that failed is tried again a minute later. Resolves when the
    * try under way, if any, has ended; never rejects. */
