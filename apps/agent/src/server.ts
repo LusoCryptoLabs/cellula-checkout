@@ -125,7 +125,7 @@ if (sub === 'key') {
   const address = await new ccc.SignerCkbPrivateKey(new ccc.ClientPublicTestnet(), key.startsWith('0x') ? key : `0x${key}`).getRecommendedAddress()
   console.log(made.length ? `made ${made.join('\nmade ')}` : `the keys are there already: ${keyFile}, ${apiKeyFile}`)
   console.log(`\nthe agent's testnet address: ${address}`)
-  console.log("fund it with testnet CKB (https://faucet.nervos.org): 700 for its first channel of 20 CKB, with the LSP's 500 CKB opening fee, paid once, and the change")
+  console.log("fund it with testnet CKB (https://faucet.nervos.org): 700 for its first channel of 20 CKB, the LSP's opening fee if it asks one, and the change")
   console.log('\nthen start it with your own testnet address and your limits:')
   console.log('  npx cellula-agent --return-to ckt1... --per-payment 1 --total 10')
   process.exit(0)
@@ -285,7 +285,7 @@ for (;;) {
     break
   } catch (e) {
     log(`not open yet: ${e instanceof Error ? e.message : String(e)}`)
-    log(`it needs ${cfg.openCkb} CKB plus the ${RESERVE_CKB} CKB reserve at ${started.address}, and the LSP's 500 CKB opening fee the first time for this address; trying again in a minute`)
+    log(`it needs ${cfg.openCkb} CKB plus the ${RESERVE_CKB} CKB reserve at ${started.address}, and the LSP's opening fee if it asks one; trying again in a minute`)
     await sleep(OPEN_AGAIN_MS)
   }
 }
