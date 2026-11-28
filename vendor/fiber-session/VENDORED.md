@@ -17,12 +17,12 @@ the kit runs as it is:
 
 | File | sha256 |
 | --- | --- |
-| `signer/cellula_lsp_signer_bg.wasm` | `fca086d51db7f2286a2c92a8ccc5434ca78a78fa7f04e7b724f42013675378d8` |
+| `signer/cellula_lsp_signer_bg.wasm` | `3ac53d9d7cb506a555513c8f4a1eb4aacd2a61441a70ec8c9d48a22a0fe18261` |
 | `signer/cellula_lsp_signer.js` | `3e146c0d135704359d6ce143113f77ba050d13f34fce7b4cf93c654c73fc9c0d` |
 
-It is the build the Cellula wallet runs on testnet since 2026-11-25. Built from:
+It is the build the Cellula wallet runs on testnet since 2026-11-28. Built from:
 
-- the signer's source at `62b132b7` (LusoCryptoLabs, private)
+- the signer's source at `d30a3778` (LusoCryptoLabs, private)
 - the Fiber crates at `7f3fc26c5939e24306992a9e248250af7931edb6`, a branch of Fiber's LSP line
   with our commits on top (LusoCryptoLabs, private)
 - rustc 1.96.0, target `wasm32-unknown-unknown`, wasm-bindgen 0.2.125 (`--target web`), clang
